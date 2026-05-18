@@ -106,7 +106,6 @@ return {
     -- Add all your non-LSP tools (formatters, linters) here
     vim.list_extend(ensure_installed, {
       'markdownlint',
-      'black',
       'clang-format',
       'latexindent',
       'ruff',

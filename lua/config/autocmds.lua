@@ -15,7 +15,7 @@ autocmd('BufWinEnter', {
   callback = function()
     vim.opt_local.textwidth = 80
     vim.opt_local.formatoptions:append 't'
-    vim.opt_local.colorcolumn = '80'
+    vim.opt_local.colorcolumn = '100'
   end,
 })
 
@@ -24,6 +24,8 @@ autocmd('BufWinEnter', {
   pattern = { '*.c', '*.cpp', '*.h' },
   callback = function() vim.opt_local.colorcolumn = '80' end,
 })
+
+vim.opt_local.colorcolumn = '100'
 
 local rel_num_group = augroup 'relative_numbers'
 autocmd('InsertEnter', {
