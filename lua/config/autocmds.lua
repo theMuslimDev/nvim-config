@@ -9,6 +9,18 @@ autocmd('FileType', {
   end,
 })
 
+autocmd('FileType', {
+  group = augroup 'markdown_settings',
+  pattern = 'markdown',
+  callback = function()
+    vim.opt_local.textwidth = 80
+    vim.opt_local.formatoptions:append 't'
+    vim.opt_local.colorcolumn = '80'
+  end,
+  
+})
+
+
 autocmd('BufWinEnter', {
   group = augroup 'latex_settings',
   pattern = '*.tex',
