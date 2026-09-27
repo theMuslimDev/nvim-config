@@ -70,10 +70,21 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 
 -- Diagnostic Config
+-- Grayscale colorscheme can't rely on hue to tell severities apart, so signs
+-- use distinct icons and errors/warnings get distinct underline styles
+-- (undercurl vs underline; the actual styling is in plugins/base16.lua).
 vim.diagnostic.config {
   update_in_insert = false,
   severity_sort = true,
   float = { border = 'rounded', source = 'if_many' },
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '✗',
+      [vim.diagnostic.severity.WARN] = '▲',
+      [vim.diagnostic.severity.INFO] = '●',
+      [vim.diagnostic.severity.HINT] = '○',
+    },
+  },
   underline = { severity = { min = vim.diagnostic.severity.WARN } },
   virtual_text = true,
   virtual_lines = false,
