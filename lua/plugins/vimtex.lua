@@ -1,5 +1,6 @@
 return {
   'lervag/vimtex',
+  version = 'v2.18', -- pinned exact release; bump manually when you want to update
   lazy = false,
   init = function()
     vim.g.vimtex_compiler_method = 'latexmk'
