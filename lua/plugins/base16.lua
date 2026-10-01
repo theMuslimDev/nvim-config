@@ -44,7 +44,9 @@ local palettes = {
 
 return {
   'RRethy/base16-nvim',
-  lazy = false,
+  -- Disabled: back on Catppuccin Frappe (see plugins/catppuccin.lua).
+  -- Re-enable by setting lazy = false again.
+  lazy = true,
   priority = 1000,
   config = function()
     local colors = palettes[MODE]
